@@ -1,0 +1,17 @@
+1. Some history on version control software (VCS). Git is a Distributed Version Control System (CVCS),
+    it fully mirror repository and store it in local computer. Thus it doesn't require online connect to use,
+    also if the repository is down, the data can be recouped from any client repository.
+2. More history, Git is a open source program initiative started because of linux kernal development team have
+    someissue with the old VCS they used. Hence they develop their own like a boss, notable mention of Linus Torvalds.
+3. Git Feature:
+    a. Snapshots, not difference: hence data to git is a stream of snapshots
+    b. Locality for most command, no internet is accedptable
+    c. Integrity: Git do checksum to verify data at very low level. file corruption in transit could be detected
+    d. Addition only: Git only add data to local database
+4. Git flows overview:
+    a. the famous diagram of how git file work in a cycle.
+    b. Commited: data safely store in local database
+    c. Modified: changed file but not yet Commited
+    d. Staged: marked a modified file and will be commited on next snapshots
+5. Git has UI, but command line is prefered as UI doesn't cover less popular command (well, it isn't cool also :p)
+
