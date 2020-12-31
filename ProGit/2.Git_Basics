@@ -6,20 +6,20 @@ File can have two state:
         2. modified
         3. staged
 
-common commands:
-    1. git init: track this directory project, will create a subdirectory ".git", which
+common commands (* for essential):
+    *1. git init: track this directory project, will create a subdirectory ".git", which
                  which has all the git internal stuff in internal
-    2. git clone: clone an existing repository, optional second para for local folder name
+    *2. git clone: clone an existing repository, optional second para for local folder name
                   (e.g. git clone https://github.com/blablabla my_sample)
-    3. git status: summary of files states as above. option para -s to make result less verbose
-    4. git add:
+    *3. git status: summary of files states as above. option para -s to make result less verbose
+    *4. git add:
         a. Think of it as "add this content to next commit"
            rather than "add this file to the project" But add is a multipurpose command,
            it can also do marking merge-conflicted files as resolved.
         b. It is possible to have the same added file have both modified and staged state.
            Since git add save the snapshot as you add it. subsequence changes to added file won't be reflect,
            to update it need to add the same file again.
-    5. ".gitignore": file pattern that need to be ignore by git
+    *5. ".gitignore": file pattern that need to be ignore by git
         pattern rule:
             1. line starting # is comment and will be ignored
             2. use standard glob patterns
@@ -27,21 +27,35 @@ common commands:
             4. negate pattern with "!"
             5. "/**/" could means single or multi level direcotries, vs "/*/" is just single level.
         "https://github.com/github/gitignore" provide very good example for gitignore file.
-    6. git diff: difference about what has changed.
+    *6. git diff: difference about what has changed.
         1. What have changed but not yet staged (plain git diff without extra arg)
         2. What have staged and about to commit (git diff --staged, aka --cache)
-    7. git commit: taking staging files snapshot into git repository.
+    *7. git commit: taking staging files snapshot into git repository.
                    it is possible to skip the staging area entirely by adding para -a (e.g. git commit -a -m "test123")
-    8. git rm: 
+    8. git rm:
         a. to remove a file from git repositry, remove it first in the directory that do git rm. next commit will have the file removed.
         b. to remove file from staging area, use git rm -cached <filename>
     9. git mv: usually not needed to, git is smart enough to detect file movement.
-    10. git log: show the history of git commits. popular optional para:
+    *10. git log: show the history of git commits. popular optional para:
         a. -p: equals to git diff, show the difference between commit
         b. --stat: show change statistic
         c. --pretty: oneline/short/full/fuller/format. for different output format, can be custismized with "format", useful for logging
         d. --since/until: e.g.since=2.weeks, limits to last two weeks
-        e. --author
+        e. --author: author is the first person commit the project, commiter is the last person commit
         d. --grep: linux grep
         e. -S: find last commit that added or removed a string (e.g. git log --Sfunction_name)
-    
+    11. git remote: show remote origin name
+            a. use -v for repository links
+            b. add: add short name with git remote add [shortname] [url]
+            c. show [branch-name]: details on push and pull ifo
+    12. git fetch: get data from remote project that not in local, default name for remote is "origin",
+                   this will not merge any with any local work.
+    *13. git pull: git fetch + automatically tries to merge into local code
+    *14. git push: git push [remote-name] [branch-name]. Push local to remote, must pull before push.
+    15. git tag: tag a commit, so it is searchable. e.g. major release
+        a. annotated tags: full git objects, author/mail/date etc. recommended. git tag -a
+        b. lightweight tag: just like a branch, a pointer to a commit
+        c. tag after commit: git tag and refer to a commit checksum
+        d. git push doesn't transfer tag, to push it need to run "git push origin [tagname]", to push all "git push origin --tags"
+    *16. git alias: set a alias to git command. "git config --global alias.ci commit" >> git ci (git commit)
+                   can be something longer such as 'reset HEAD --'
