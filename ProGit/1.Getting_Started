@@ -14,4 +14,4 @@
     c. Modified: changed file but not yet Commited
     d. Staged: marked a modified file and will be commited on next snapshots
 5. Git has UI, but command line is prefered as UI doesn't cover less popular command (well, it isn't cool also :p)
-
+6. First time git setup, like git config related stuff.
