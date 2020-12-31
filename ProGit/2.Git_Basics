@@ -28,5 +28,7 @@ common commands:
             5. "/**/" could means single or multi level direcotries, vs "/*/" is just single level.
         "https://github.com/github/gitignore" provide very good example for gitignore file.
     6. git diff: difference about what has changed.
-        1. What have changed but not yet staged
-        2. What have staged and about to commit
+        1. What have changed but not yet staged (plain git diff without extra arg)
+        2. What have staged and about to commit (git diff --staged, aka --cache)
+
+    7. it is possible to skip the staging area entirely by adding para -a (e.g. git commit -a -m "test123")
