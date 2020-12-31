@@ -30,5 +30,18 @@ common commands:
     6. git diff: difference about what has changed.
         1. What have changed but not yet staged (plain git diff without extra arg)
         2. What have staged and about to commit (git diff --staged, aka --cache)
-
-    7. it is possible to skip the staging area entirely by adding para -a (e.g. git commit -a -m "test123")
+    7. git commit: taking staging files snapshot into git repository.
+                   it is possible to skip the staging area entirely by adding para -a (e.g. git commit -a -m "test123")
+    8. git rm: 
+        a. to remove a file from git repositry, remove it first in the directory that do git rm. next commit will have the file removed.
+        b. to remove file from staging area, use git rm -cached <filename>
+    9. git mv: usually not needed to, git is smart enough to detect file movement.
+    10. git log: show the history of git commits. popular optional para:
+        a. -p: equals to git diff, show the difference between commit
+        b. --stat: show change statistic
+        c. --pretty: oneline/short/full/fuller/format. for different output format, can be custismized with "format", useful for logging
+        d. --since/until: e.g.since=2.weeks, limits to last two weeks
+        e. --author
+        d. --grep: linux grep
+        e. -S: find last commit that added or removed a string (e.g. git log --Sfunction_name)
+    
