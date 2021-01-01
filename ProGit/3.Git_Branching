@@ -1,0 +1,51 @@
+*start to do branch for all additon in the document, it is what this chapter is about
+
+basic branching workflow:
+1. create branch for new story/feature
+2. do work / commit in that branch
+3. if there is production issue, checkout main and create hotfix branch
+4. when hotfix done, then merge to production.
+5. checkout feature branch and continue working
+
+
+    1. Branching is diverage from main line of development and continue to
+       work without messing with main line.
+    2. A branch in git is simply a lightweight movable pointer, 
+        whenever a commit is done, the pointer move forward.
+    3. "main"/"master"(older version) is the default name for main branch, it
+        is just the same as any other branch
+    4. HEAD is a pointer also, usually it is point to where the branch is.
+    5. git checkout does two things:
+        a. move header to the target branch
+        b. change file content to the state of that branch
+        switching branches changes files in working directory!
+    6. branch in git is just a simple file that contains checksum, hence the speed
+    7. Git won't let you witch branch before commiting changes in current branch,
+        best practice is to often commit before switch.
+    8. to merge changes to main, simply do:
+        a. git checkout main
+        b. git merge <branch name>
+    
+        I. if there is no changes in main since last branch, this will be a "fast-foward" action,
+        meaing "main" will just point to the latest commit instead.
+        II. if there is more than one commit in working branch, since the working branch and
+        main doesn't share the same ancestor commit, so this will be "merge commit". Where git under the hood
+        will do a "three-way merge" baes on two snapshots from branch tips and the common ancestor of two. (figure 3-15)
+    
+    9. Merge CONFLICT: everybody nightmare. It happens when we edit same section of the same file betwen two branch,
+                       a "clean" merge is not possible from git. The problem file will be listed as "unmerged",
+                       we can open the file manually to resolve the conflict
+                       1. we can use "git meretool", a UI to resolve conflict
+    10. Long-Running Branches: branch that always open for different stages of dev. cycle.
+                               "develop/next" should be further down the commit line, while "topic" is breeding edge
+
+                               try to think of branches as silos, multi level branch has different length (# of commit)
+
+    command:
+        1. git branch: create new branch only, doesn't switch
+                       -v see the last commit on each branch
+                       --merged/no-merged filter branches accordingly
+                       -d delete branch. git will not delete unmerged branch, unless forced with -D
+        2. git checkout -b: create new branch and check that out
+
+
