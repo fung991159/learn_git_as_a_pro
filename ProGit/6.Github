@@ -1,0 +1,14 @@
+this is a chapter entirely on github, somewhat related to git.
+
+    1. fork: copy the project into your own namespace as a way to contribute to it
+    2. github basically use Integration Manager workflow, where developer fork a project and
+        do some work. Then create a pull request to ask author to merge it
+    3. the pull request section has following features:
+        a. provides git diff to see what developer changes.
+        b. comments for discussion on the changes
+
+A typical git project:
+    1. README: info relvant to the project. What, How to install, example
+    2. CONTRIBUTING: the info will show in pull request page. To remind people to read the guideline
+
+There is a github api for automating repeating work
