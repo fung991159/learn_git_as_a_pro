@@ -26,4 +26,6 @@ commands:
     *8. git stash: save working directory state (e.g. for switching branch).
             a. -list: previous stashes
             b. git stash apply: no args mean latest stash. otherwise git stash apply stash@{2}
-            
+            c. git stash apply --index: return the staged file state also, though it could fails due to conflict
+            d. --keep-index: do not stash anything in staging
+            e. -u: default stash only tracked files, this stash any untracked files as well
