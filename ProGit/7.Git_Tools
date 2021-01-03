@@ -19,3 +19,4 @@ commands:
     5. Double Dot(..): range of commits that are reachable from one commit but aren't reachable from another.
                         i.e. what hasn't been merged
     6. Triple Dot: all commits reachable by either of two ref but not by both of them
+    7. git add -i: interactive mode for git add
