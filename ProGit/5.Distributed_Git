@@ -1,3 +1,12 @@
-abadsf
-adfafdh
-adfafdhj
+This is on how a group of developers can collaborate using git.
+
+1. Centralized Workflow: everyone work on the same shared repository
+    , each developer need to pull and push to that. Including merge if there is others changes.
+2. Integration-Manager Workflow: The project is reside in a canonical repository,
+    . Developer develop by cloning the "main", when done will make a pull request. IM can then test locally before
+    merging changes to canonical repository
+3. Dictator and Lieutenants: this is mostly for huge project. Dictator is the ultimate master branch, which each
+    module has its own master branch ("Lieutenant"). Developer will work on topic branch of the lieutenant, the rest is like
+    Integration-Manager
+
+The rest of the chapter is more vivid examples on how these work.
