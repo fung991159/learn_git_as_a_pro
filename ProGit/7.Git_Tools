@@ -19,4 +19,11 @@ commands:
     5. Double Dot(..): range of commits that are reachable from one commit but aren't reachable from another.
                         i.e. what hasn't been merged
     6. Triple Dot: all commits reachable by either of two ref but not by both of them
-    7. git add -i: interactive mode for git add
+    7. more on git add
+         -i: interactive mode for git add
+            patch: allow selection of which part to commit
+    
+    *8. git stash: save working directory state (e.g. for switching branch).
+            a. -list: previous stashes
+            b. git stash apply: no args mean latest stash. otherwise git stash apply stash@{2}
+            
