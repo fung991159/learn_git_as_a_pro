@@ -1,0 +1,21 @@
+This chapter is pretty much ch.2, but explore advance commands in more depth.
+
+To refer to commit:
+    1. full SHA-1 hash
+    2. partial SHA-1 hash, usually four char is enough
+
+commands:
+    1. git show [hash]/[branch]: show the commit info.
+    2. git log --abbrev-commit show short version of SHA
+    3. (low level) git rev-parse: get SHA from name
+    4. *git reflog: log of where HEAD and branch referenve have been from
+                    last few months
+        syntax variation:
+        a. "HEAD/main@{5}" can be use in git log too
+        b. main@{yesterday}, main@{2.months.ago}
+        c. HEAD^: "^" show ancestor commit. can stack them
+                  "^2" on merge case resolve which parent commit to follow, doesn't mean "^^"
+        d. HEAD~: "~"specify number of commits, can be use with ^, e.g. HEAD~3^2
+    5. Double Dot(..): range of commits that are reachable from one commit but aren't reachable from another.
+                        i.e. what hasn't been merged
+    6. Triple Dot: all commits reachable by either of two ref but not by both of them
