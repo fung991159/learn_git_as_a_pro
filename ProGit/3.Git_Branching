@@ -36,16 +36,47 @@ basic branching workflow:
                        a "clean" merge is not possible from git. The problem file will be listed as "unmerged",
                        we can open the file manually to resolve the conflict
                        1. we can use "git meretool", a UI to resolve conflict
-    10. Long-Running Branches: branch that always open for different stages of dev. cycle.
+
+Type of Branches:
+    1. Long-Running Branches: branch that always open for different stages of dev. cycle.
                                "develop/next" should be further down the commit line, while "topic" is breeding edge
-
                                try to think of branches as silos, multi level branch has different length (# of commit)
+    2. Topic branch: short-live branch that create for single feature
+    3. Remote Branches: pointers to state of branches in remote repository. cannot be moved and can only be moved
+                        with git fetch.
 
-    command:
-        1. git branch: create new branch only, doesn't switch
-                       -v see the last commit on each branch
-                       --merged/no-merged filter branches accordingly
-                       -d delete branch. git will not delete unmerged branch, unless forced with -D
-        2. git checkout -b: create new branch and check that out
+Branches info:
+    1. branch are not automatically pushed such that it is possible to have private branch in local,
+       can be explicilly pushed with "git push (remote) (branch)"
+    2. to "sync" with remote branch, either:
+        a. checkout a remote branch by "git checkout -b [branch] [remotename]/[branch]" or "git checkout --track [remotename]/[branch]"
+        b. if local branch already exist, set "git branch -u [remotename]/[branch]" (set upstram)
+    3. When tracking branch is set up, it can be reference as @{upstraem} or @{u}
 
 
+Integrate branches:
+    there are two main way to do this: 1. Merge 2. Rebase
+    1. Merge: take the latest snapshot of two branch, and their common ancestor. Then put it in one snapshot.
+    2. Rebase: take the commits in one branch and reapply it in on commits in another branch. 
+        (source branch) git rebase [target branch]. Under the hood git get diff from each commit in source branch to temp file,
+        then apply each changes to target branch.
+
+    The result is the same, but the history will show rebase as linear history, as if parallel branching doesn't happen.
+
+    Figure 3-31 provide a good example of moving commits from secondary branch (where ancestor not in main) back to main with rebase.
+
+    !! DO not rebase commits that exist outside of your repository, rebase = abadndoning existing commits
+     and creating new ones that are similar but different. books provide examples and fixes at figure 3-39
+     rule of thumbs: one should rebase only commits that is not public/published in remote. if it is necessary 
+                    then makes sure everybody is cooridnated with a git pull --rebase.
+
+command:
+    1. git branch: create new branch only, doesn't switch
+                    -v see the last commit on each branch
+                    --merged/no-merged filter branches accordingly
+                    -d delete branch. git will not delete unmerged branch, unless forced with -D
+    2. git checkout -b: create new branch and check that out
+    3. git pull: git fetch + git merge (in most case, not recommended as the internal working can be confusing)
+    4. git push origin --delete [branch]: delete a remote branch, i.e. remove the pointer in git server
+    5. git rebase: (checked out source branch) git rebase [target branch].
+                    (in main branch) git rebase [basebranch] [topicbranch]
