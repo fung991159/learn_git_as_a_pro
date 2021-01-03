@@ -1,0 +1,10 @@
+This chatper is about how to host git server which is of less relavant to me now.
+
+1. remote repository is a bare repository, i.e. just the .git folder. No working directory.
+2. 4 protocols to transfer git data:
+    a. Local
+    b. HTTP
+    c. SSH
+    d. Git
+
+author did mention about advantage of hosting gitlab on own server.
