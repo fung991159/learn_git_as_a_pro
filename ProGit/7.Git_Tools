@@ -44,3 +44,5 @@ commands:
     12. git commit: --amend: to change last commit message, it will change the SHA-1,
                     so don't amend something that is public
     13. git rebase: -i, interactively reorder and change prevoius commits message
+                    "squash" will put multiple commits in one
+                    
