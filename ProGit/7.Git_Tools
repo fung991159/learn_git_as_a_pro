@@ -5,6 +5,10 @@ To refer to commit:
     1. full SHA-1 hash
     2. partial SHA-1 hash, usually four char is enough
 
+Others:
+    1. it is possible to add a signed tag to ensure code security, though
+    doing this need the effort of entire team knows how to use the tag tools.
+
 commands:
     1. git show [hash]/[branch]: show the commit info.
     2. git log --abbrev-commit show short version of SHA
@@ -23,7 +27,7 @@ commands:
     7. more on git add
          -i: interactive mode for git add
             patch: allow selection of which part to commit
-    
+
     *8. git stash: save working directory state (e.g. for switching branch).
             a. -list: previous stashes
             b. git stash apply: no args mean latest stash. otherwise git stash apply stash@{2}
@@ -32,3 +36,11 @@ commands:
             e. -u: default stash only tracked files, this stash any untracked files as well
             f. git stash [stash branch name]:  recover stash in new branch
     9. git clean: !remove untracked file. do a dry run with -n
+    10. git grep: bash grep but faster, and can search through pass commit/tree, not just current working dir
+                  -n: get # of line in doc
+                  -p: get the function name oof search text appearance
+    11. git log: -S to search for string first appearence in commits history
+                 -L to see every changes made to a function
+    12. git commit: --amend: to change last commit message, it will change the SHA-1,
+                    so don't amend something that is public
+    13. git rebase: -i, interactively reorder and change prevoius commits message
