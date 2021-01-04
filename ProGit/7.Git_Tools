@@ -45,4 +45,3 @@ commands:
                     so don't amend something that is public
     13. git rebase: -i, interactively reorder and change prevoius commits message
                     "squash" will put multiple commits in one
-                    
