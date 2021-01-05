@@ -45,3 +45,21 @@ commands:
                     so don't amend something that is public
     13. git rebase: -i, interactively reorder and change prevoius commits message
                     "squash" will put multiple commits in one
+    14. git filter-branch --tree-filter 'rm -f <filename>' HEAD to remove a file from all commit, try do this on
+        a test branch first, then do it on main
+
+reset & checkout dive: there is three tree in git
+    1. HEAD: last commit snapshot, next parent
+    2. Index (Staging Area): proposed next commit snapshot
+    3. Working Directory: Sandbox
+
+    git checkout will changes HEAD to point to another branch ref, hence populate
+    Index with with the snapshot of that commit, then copies contents of the Index to working Directory.
+
+    what git reset does:
+        1. move HEAD: moves the branch that HEAD is point to. (different than checkout, where it is just changing the HEAD)
+                      this is what git reset --soft does, without changing INDEX, working directory
+        2. Updating Index: update the Index area and unstaged everything (git reset --remix, can be without --remix as it is default)
+        3. Updating working directory: the only way to destory data and without comeback
+
+
