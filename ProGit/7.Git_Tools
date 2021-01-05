@@ -62,4 +62,12 @@ reset & checkout dive: there is three tree in git
         2. Updating Index: update the Index area and unstaged everything (git reset --remix, can be without --remix as it is default)
         3. Updating working directory: the only way to destory data and without comeback
 
+    Variation:
+        a. if filepath is provided, i.e. git reset file.txt. Step 1 above will be skipped, since can't 
+        partially move a branch for some file but not others. Hence it will stop at step 2 after taking file.txt off Index.
+        So git reset a file is the opposite of git add a file.
+        b. git reset <commit SHA> <filename>. This will restore the file to that commit version.
 
+    git checkout is similar to reset --hard, as it change all 3 environment, with difference:
+    1. workink dir won't have data loss.
+    2. checkout move HEAD to branch, instead of branch to HEAD (figure 7-19)
