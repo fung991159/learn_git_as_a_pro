@@ -82,3 +82,8 @@ Undo a merge:
 2. git revert: creating a new commit that un do changes from previous commits. Hence avoid moving 
                the branch HEAD around. git revert -m 1 HEAD, -m stand for mainline, while "1" is the first parent,
                same as the  "1/2" in "HEAD^2"
+
+Rerere (reuse recorded resolution):
+    With rerere turn on git can start to do some easy merge conflict. To enable it:
+    git config --global rerere.enabled true
+    
