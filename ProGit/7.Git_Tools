@@ -71,3 +71,14 @@ reset & checkout dive: there is three tree in git
     git checkout is similar to reset --hard, as it change all 3 environment, with difference:
     1. workink dir won't have data loss.
     2. checkout move HEAD to branch, instead of branch to HEAD (figure 7-19)
+
+Merge conflict:
+1. avoid merging: git merge --abort
+2. if whitespace related, git merge -Xignore-all-space whitespace
+3. git show common ancestor, and the two conflict version. Then do git mer-file
+
+Undo a merge:
+1. if commit only in local, git reset --hard HEAD~, hence destorying the latest commit.
+2. git revert: creating a new commit that un do changes from previous commits. Hence avoid moving 
+               the branch HEAD around. git revert -m 1 HEAD, -m stand for mainline, while "1" is the first parent,
+               same as the  "1/2" in "HEAD^2"
