@@ -1,0 +1,8 @@
+This chapter is mostly on git config
+
+1. --global commit.template: this change the commit popup message. If team has commit policy then can change this.
+2. help.autocorrect: accept integer that represent 1/10 of a second. git will automtically make a best guess of wrongly typed command
+                     e.g. git config --global help.autocorrect 50
+3. merge.tool: define external merge tool and related setting. here the book recommends py4merge.
+4. merge strategies: it is possible to tell git a merge policy on certain files
+5. hooks: client side will be fired when committing and merging, server-side hooks will fire when received pushed commits
