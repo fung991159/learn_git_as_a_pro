@@ -47,6 +47,7 @@ commands:
                     "squash" will put multiple commits in one
     14. git filter-branch --tree-filter 'rm -f <filename>' HEAD to remove a file from all commit, try do this on
         a test branch first, then do it on main
+    15. git replace: change one history presentation without rebuilding history
 
 reset & checkout dive: there is three tree in git
     1. HEAD: last commit snapshot, next parent
@@ -86,4 +87,15 @@ Undo a merge:
 Rerere (reuse recorded resolution):
     With rerere turn on git can start to do some easy merge conflict. To enable it:
     git config --global rerere.enabled true
+
+git bisect:
+    to find out where the bug was introduce, bisect the last known good state. 
+
+
+Submodules: keep a Git repository as a subdirectory of another git repository,
+            hence clone another repository into your project and keep commits seperate
+
+            this is a really big topic and need revisit later
+
+Credential Storage:
     
