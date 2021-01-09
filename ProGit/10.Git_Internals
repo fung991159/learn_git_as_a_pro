@@ -1,0 +1,7 @@
+This chapter is on the internal wiring within git, though a little bit too tough and remote for me,
+might need to revisit this chapter after some more experience in using git.
+
+1. git is a content-addressable filesystem with a VCS user interface
+2. "plumbing" commands: git low-level command when it was first designed. Among which
+    most user-friendly one are  the "porcelain" commands.
+3. git store files in key-value store. git first stores single file per piece of content, the SHA-1 was breakdown as folder and filename
